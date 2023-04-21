@@ -25,7 +25,7 @@ public class AppTest {
         //Full screen.
     }
     @Test()
-    void dropdownMethod() {
+    void dropdownMethod() throws InterruptedException {
         Select select = new Select(driver.findElement(By.id("dropdowm-menu-1")));
         select.selectByValue("java");
 
@@ -34,14 +34,16 @@ public class AppTest {
 
         Select select2 = new Select(driver.findElement(By.id("dropdowm-menu-3")));
         select2.selectByValue("javascript");
+        Thread.sleep(2000);
 
     }
 
     @Test
-    void checkBoxMethod(){
+    void checkBoxMethod() throws InterruptedException {
 
         WebElement e = driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/label[2]/input"));
         e.click();
+        Thread.sleep(2000);
 
 //        WebElement e1 = driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/label[3]/input"));
 //        e1.click();
@@ -53,6 +55,5 @@ public class AppTest {
         radioElement.click();
 
     }
-
 
 }
